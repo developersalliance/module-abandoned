@@ -1,0 +1,47 @@
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */
+.DevAll-Abandoned-Email, .DevAll-Abandoned-Email-Table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.DevAll-Abandoned-Email-Table {
+    width: 64%;
+}
+
+.DevAll-Abandoned-Email-Button{
+    font-size: 16pt;
+    font-weight: 600;
+    text-align: center
+}
+
+.DevAll-Abandoned-Email-Url{
+    text-decoration:none !important;
+}
+
+.DevAll-Abandoned-Email-Styles {
+    padding-top: 5px;
+    width: 250px;
+    height: 30px;
+    background-color: red;
+    border-radius:6px;
+    color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.DevAll-Abandoned-Email-Images {
+    border: 1px solid black;
+    border-collapse: collapse;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.DevAll-Abandoned-Email-Images-Size {
+    width: 100px;
+}

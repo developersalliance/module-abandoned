@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */-->
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">devall_cart_abandoned_listing.devall_cart_abandoned_listing_data_source</item>
+            <item name="deps" xsi:type="string">devall_cart_abandoned_listing.devall_cart_abandoned_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">devall_abandoned_history</item>
+    </argument>
+    <dataSource name="devall_cart_abandoned_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
+            <argument name="name" xsi:type="string">devall_cart_abandoned_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render" />
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks" />
+        <columnsControls name="columns_controls" />
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="data" xsi:type="array">
+                    <item name="selectProvider" xsi:type="string">devall_cart_abandoned_listing.devall_cart_abandoned_listing.devall_abandoned_history.ids</item>
+                    <item name="displayArea" xsi:type="string">bottom</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <action name="send_email">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">send_email</item>
+                        <item name="label" xsi:type="string" translate="true">Send Email</item>
+                        <item name="url" xsi:type="url" path="devall_cart/history/SendEmail" />
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="templates" xsi:type="array">
+                        <item name="filters" xsi:type="array">
+                            <item name="select" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                            </item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+        </filters>
+        <paging name="listing_paging" />
+    </listingToolbar>
+    <columns name="devall_abandoned_history">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="entity_id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="customer_email">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Email</label>
+            </settings>
+        </column>
+        <column name="items_count">
+            <settings>
+                <label translate="true">Number of Items</label>
+                <filter>textRange</filter>
+            </settings>
+        </column>
+        <column name="subtotal" class="Magento\Sales\Ui\Component\Listing\Column\Price">
+            <settings>
+                <label translate="true">Subtotal</label>
+                <filter>textRange</filter>
+            </settings>
+        </column>
+        <column name="created_at" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <label translate="true">Date &amp; Time of Abandonment</label>
+                <filter>dateRange</filter>
+            </settings>
+        </column>
+    </columns>
+</listing>

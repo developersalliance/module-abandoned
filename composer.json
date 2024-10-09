@@ -1,0 +1,26 @@
+{
+    "name": "developersalliance/module-abandoned",
+    "version": "1.0.1",
+    "type": "magento2-module",
+    "require": {
+        "php": ">=7.2 <=8.2",
+        "developersalliance/module-base": "*",
+        "magento/module-quote": "*",
+        "magento/module-ui": "*",
+        "magento/module-backend": "*",
+        "magento/module-cron": "*",
+        "magento/module-email": "*",
+        "magento/module-sales": "*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Devall\\Abandoned\\": ""
+        }
+    }
+}

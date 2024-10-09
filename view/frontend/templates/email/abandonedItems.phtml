@@ -1,0 +1,25 @@
+<?php
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */
+
+/** @var $block Magento\Framework\View\Element\Template */
+/** @var $viewModel DevAll\Abandoned\ViewModel\AbandonedItemsImages */
+
+$viewModel = $block->getData('view_model');
+?>
+
+<?php foreach ($viewModel->prepareEmail as $value): ?>
+<tr>
+    <td class="DevAll-Abandoned-Email-Images">
+    <img class="DevAll-Abandoned-Email-Images-Size" src="<?= $value['images'] ?>" alt="product_photo">
+    </td>
+    <td class="DevAll-Abandoned-Email"><?= $value['qty'] ?></td>
+    <td class="DevAll-Abandoned-Email"><?= $value['price'] ?></td>
+</tr>
+<?php endforeach; ?>
+
+
+

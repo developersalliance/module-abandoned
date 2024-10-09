@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <devall_abandoned_section_general>
+            <devall_abandoned_email_group_general>
+                <sender_name>Owner</sender_name>
+                <Sender_Email>Owner@example.com</Sender_Email>
+                <email_subject>Abandoned cart</email_subject>
+                <time_period>12</time_period>
+                <time_period_email>0 */24 * * *</time_period_email>
+            </devall_abandoned_email_group_general>
+        </devall_abandoned_section_general>
+    </default>
+</config>

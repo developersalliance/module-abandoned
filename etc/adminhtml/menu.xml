@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="DevAll_Abandoned::menu_id_title"
+             title="Abandoned Cart"
+             module="DevAll_Abandoned"
+             sortOrder="100"
+             parent="DevAll_Base::base"
+             resource="DevAll_Abandoned::abandoned"/>
+        <add id="DevAll_Base::base_Abandoned_Main"
+             title="Abandoned Cart"
+             module="DevAll_Abandoned"
+             sortOrder="10"
+             parent="DevAll_Base::base"
+             resource="DevAll_Abandoned::abandoned"/>
+        <add id="DevAll_Abandoned::base_Abandoned_Subsection_Dashboard"
+             title="History"
+             module="DevAll_Abandoned"
+             sortOrder="10"
+             parent="DevAll_Base::base_Abandoned_Main"
+             resource="DevAll_Abandoned::resend_email"
+             action="devall_cart/history"/>
+        <add id="DevAll_Abandoned::base_Abandoned_Subsection"
+             title="Configuration"
+             module="DevAll_Abandoned"
+             sortOrder="20"
+             parent="DevAll_Base::base_Abandoned_Main"
+             resource="DevAll_Abandoned::config"
+             action="adminhtml/system_config/edit/section/devall_abandoned_section_general"/>
+    </menu>
+</config>

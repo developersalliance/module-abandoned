@@ -1,0 +1,28 @@
+<!--
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */-->
+{{template config_path="design/email/header_template"}}
+{{inlinecss file="DevAll_Abandoned::css/email.css"}}
+<!--@subject {{trans "%subject" subject=$customVariableEmail.email_subject}} @-->
+    <div>Dear, {{var customVariableEmail.firstname}}</div>
+        <div>You have items in your shopping bag.</div>
+    <table class="DevAll-Abandoned-Email-Table">
+        <tr>
+            <th class="DevAll-Abandoned-Email">Items</th>
+            <th class="DevAll-Abandoned-Email">QTY</th>
+            <th class="DevAll-Abandoned-Email">Price $</th>
+        </tr>
+        {{layout handle="abandoned_email_items" area="frontend"}}
+    </table>
+    <div><strong>Subtotal</strong>: {{var customVariableEmail.cart_total}}</div>
+    <div class="DevAll-Abandoned-Email-Button">
+        <a class="DevAll-Abandoned-Email-Url" href="{{store url='checkout/cart}}">
+            <div class="DevAll-Abandoned-Email-Styles">
+                {{trans "CHECK OUT"}}
+            </div>
+        </a>
+    </div>
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Developers-Alliance team
+ * @copyright Copyright (c) 2024 Developers-alliance (https://www.developers-alliance.com)
+ * @package Abandoned Cart for Magento 2
+ */-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="devall_abandoned_section_general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Abandoned Cart Email</label>
+            <tab>devall</tab>
+            <resource>DevAll_Abandoned::config</resource>
+
+            <group id="devall_abandoned_email_group_general" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Settings</label>
+
+                <field id="sender_name" translate="label"  sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender Name</label>
+                </field>
+
+                <field id="sender_email" translate="label"  sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sender Email</label>
+                </field>
+
+                <field id="email_subject" translate="label"  sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Subject</label>
+                </field>
+
+                <field id="email_template" type="select" translate="label"  sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template for Alerting on Threshold Approach</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+
+                <field id="time_period" translate="label"  sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>The period of time after which a product is counted as abandoned</label>
+                </field>
+
+                <field id="time_period_email" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Time Period</label>
+                    <source_model>DevAll\Abandoned\Model\Config\Source\TimePeriodOptions</source_model>
+                    <backend_model>DevAll\Abandoned\Model\Config\CronConfig</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
