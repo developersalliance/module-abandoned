@@ -1,6 +1,6 @@
 {
     "name": "developersalliance/module-abandoned",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "type": "magento2-module",
     "require": {
         "php": ">=7.2 <8.4",
