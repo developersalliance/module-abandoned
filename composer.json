@@ -1,9 +1,9 @@
 {
     "name": "developersalliance/module-abandoned",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "magento2-module",
     "require": {
-        "php": ">=7.2 <=8.2",
+        "php": ">=7.2 <8.4",
         "developersalliance/module-base": "*",
         "magento/module-quote": "*",
         "magento/module-ui": "*",
